@@ -8,7 +8,6 @@ class LinearRegression(nn.Module):
         self.lr = lr
         
         # nn.Linear handles weight and bias initialization automatically
-        # We use 1 output for regression
         self.net = nn.Linear(input_dim, 1)
         
         # Initializing weights to normal distribution
@@ -53,4 +52,5 @@ for epoch in range(3):
 w = model.net.weight.data
 b = model.net.bias.data
 print(f'\nError in w: {true_w.T - w}')
+
 print(f'Error in b: {true_b - b}')
